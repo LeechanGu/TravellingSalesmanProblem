@@ -7,12 +7,14 @@ import javax.swing.JComponent;
 public class Answer {
 	State endState;
 	Question question;
-	int cnt;
-	Answer(Question q,State endState,int cnt)
+	long cnt;
+	long timeElapsed;
+	Answer(Question q,State endState,long cnt,long timeElapsed)
 	{
 		this.question = q;
 		this.endState = endState;
 		this.cnt = cnt;
+		this.timeElapsed = timeElapsed;
 	}
 	
 	
@@ -34,7 +36,7 @@ public class Answer {
 	
 	public void printStatistics()
 	{
-		System.out.println(question.num+" "+cnt);
+		System.out.println(question.num+" "+cnt+" "+timeElapsed);
 	}
 	
 	public void drawAnswer()

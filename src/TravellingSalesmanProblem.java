@@ -8,7 +8,7 @@ public class TravellingSalesmanProblem {
     	for (Question question:questionList)
     	{
     		AStarSearch search = new AStarSearch(question);
-    		if (question.num<12)
+    		if (question.num>16)
     			continue;
     		//System.out.println(question);
     		try {

@@ -9,7 +9,7 @@ public class AnswerGraph {
 	class TSPGraph extends JComponent {
 		Answer answer;
 		Graphics g;
-		double zoom = 3;
+		double zoom = 4;
 		TSPGraph(Answer answer)
 		{
 			this.answer = answer;
@@ -37,7 +37,7 @@ public class AnswerGraph {
 			x = (int) (loc.x*zoom);
 			y = (int) (loc.y*zoom);
 			name = loc.name;
-			g.drawString(name, x, y);
+			g.drawString(name, x+5, y+5);
 			g.drawOval(x, y, 5, 5);
 		}
 

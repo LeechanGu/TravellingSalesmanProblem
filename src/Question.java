@@ -8,6 +8,7 @@ public class Question
 	String URL;
 	int num;
 	List<Location> list;
+	
 	Question(int num, String URL)
 	{
 		this.num=num;
