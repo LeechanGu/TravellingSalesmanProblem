@@ -3,12 +3,13 @@ package TSPSimAnn;
 public abstract class SimAnnHeater {
 	private double temperature;
 	private double heatTime;
-	private int current;
+
 	private int numPeriod;
+	private long startTime;
 	public SimAnnHeater(double heatTime, int numPeriod,double temperature)
 	{
 		reset();
-		this.heatTime = heatTime;
+		this.heatTime = heatTime*1000;
 		this.temperature = temperature;
 		this.numPeriod = numPeriod;
 	}
@@ -18,9 +19,9 @@ public abstract class SimAnnHeater {
 		return numPeriod;
 	}
 	
-	public int getPeriod()
+	public long getPeriod()
 	{
-		return (int) (heatTime/numPeriod);
+		return (long) (heatTime/numPeriod);
 	}
 	
 	public double getMaxTemp()
@@ -28,29 +29,25 @@ public abstract class SimAnnHeater {
 		return temperature;
 	}
 	
-	public int getCurrentTime()
+	public long getCurrentTime()
 	{
-		return current;
+		return System.currentTimeMillis();
 	}
 	
-	public void nextMoment() throws Exception
+	public long getTimeElapsed()
 	{
-		if (!isStop())
-			current++;
-		else
-			throw new Exception();
+		return getCurrentTime()-startTime;
 	}
-	
+		
 	
 	public void reset()
 	{
-		//startTime = System.currentTimeMillis();
-		current = 0;
+		startTime = getCurrentTime();
 	}
 	
 	public boolean isStop()
 	{
-		return current>=heatTime;
+		return getCurrentTime()>=startTime+heatTime;
 	}
 	
 	public abstract double getTemperature();

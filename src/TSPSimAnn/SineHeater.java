@@ -11,6 +11,6 @@ public class SineHeater extends SimAnnHeater
 	public double getTemperature()
 	{
 		if (isStop()) return 0;
-		return super.getMaxTemp()+super.getMaxTemp()*Math.sin((double)(super.getCurrentTime())*2*Math.PI/super.getPeriod());
+		return super.getMaxTemp()+super.getMaxTemp()*Math.sin((double)(super.getTimeElapsed())*2*Math.PI/super.getPeriod());
 	}
 }

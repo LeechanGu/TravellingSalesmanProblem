@@ -2,6 +2,8 @@ package TSP;
 import java.util.List;
 
 import TSPAStar.TSPAStarSolver;
+import TSPSimAnn.LinearHeater;
+import TSPSimAnn.RectangleHeater;
 import TSPSimAnn.SineHeater;
 import TSPSimAnn.TSPSimAnnSolver;
 /**
@@ -19,7 +21,7 @@ public class TSPMain {
     		System.out.println(question);
     		try {
     			//ITSPSolver solver = new TSPAStarSolver();
-    			ITSPSolver solver = new TSPSimAnnSolver(new SineHeater(10000000,5,10000));
+    			ITSPSolver solver = new TSPSimAnnSolver(new RectangleHeater(10,10,50));
 				TSPSolution solution = solver.solve(question);
 				//solution.printStatistics();
 				solution.printSolution();

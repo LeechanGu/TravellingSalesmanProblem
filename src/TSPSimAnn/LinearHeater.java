@@ -10,7 +10,7 @@ public class LinearHeater extends SimAnnHeater
 	public double getTemperature()
 	{
 		if (isStop()) return 0;
-		int time = super.getCurrentTime()%super.getPeriod();
+		long time = super.getTimeElapsed()%super.getPeriod();
 		return (-time*super.getMaxTemp()/super.getPeriod()+super.getMaxTemp());
 	}
 }

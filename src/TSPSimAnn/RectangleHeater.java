@@ -17,7 +17,7 @@ public class RectangleHeater extends SimAnnHeater
 	public double getTemperature()
 	{
 		if (isStop()) return 0;
-		int now = super.getCurrentTime()%super.getPeriod();
+		long now = super.getTimeElapsed()%super.getPeriod();
 		if (now<super.getPeriod()/2)
 			return highTmp;
 		else 

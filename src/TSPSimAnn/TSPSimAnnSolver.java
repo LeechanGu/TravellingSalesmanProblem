@@ -64,8 +64,7 @@ public class TSPSimAnnSolver implements ITSPSolver{
 			}
 			//if ((cnt++)%100==0)
 			//	System.out.println(minLen);
-				
-			heater.nextMoment();
+
 		}
 		return new TSPSolution(question,minPath,new TSPStatistics());
 	}
